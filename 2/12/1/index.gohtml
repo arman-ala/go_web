@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+
+</head>
+<body>
+    <section>
+        <h2>People Names</h2>
+        <p>
+            {{range $person := .People}}
+                <span>{{$person.Name}} is {{$person.Gender}} and he/she is {{$person.Age}} years old.</span><br/>
+            {{end}}
+        </p>
+        <h2>Pets Names</h2>
+        <p>
+            {{range $pet := .Pets}}
+                <span>{{$pet.Name}} is a {{$pet.Gender}} pet.</span><br/>
+                <span>Name's first letter: {{fl $pet.Name}}</span><br/>
+                <span>Gender's uppercase: {{uc $pet.Gender}}</span><br/>
+            {{end}}
+        </p>
+    </section>
+</body>
+</html>
